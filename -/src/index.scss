@@ -10,10 +10,43 @@ body, html, .body-wrapper, .app-container {
 }
 body {
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: hidden;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+//PRELADER SECTION
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  overflow: hidden !important;
+  background: #000;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: preloaderAnim 2000ms linear infinite;
+  }
+}
+@keyframes preloaderAnim {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -20%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+.loader_deactive {
+  display: none;
 }
 
 //?HEAder
